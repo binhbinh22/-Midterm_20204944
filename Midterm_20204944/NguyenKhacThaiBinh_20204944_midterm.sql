@@ -19,9 +19,9 @@ CREATE TABLE Giangvien(
    Lop varchar(20)
    );
 CREATE TABLE HuongDan (
-	GV# VARCHAR(5)  REFERENCES Giangvien(GV#),
-	DT# VARCHAR(5)  REFERENCES detai(DT#),
-	SV# VARCHAR(5)  REFERENCES Sinhvien(SV#),
+	GV# VARCHAR(5)  FOREIGN KEY REFERENCES Giangvien(GV#),
+	DT# VARCHAR(5)  FOREIGN KEY REFERENCES detai(DT#),
+	SV# VARCHAR(5)  FOREIGN KEY REFERENCES Sinhvien(SV#),
 	NamThucHien integer,
 	KetQua numeric);
 -- tạo dữ liệu:
@@ -80,7 +80,7 @@ WHERE Theloai = 'ung dung';
  UPDATE Sinhvien SEt Ngaysinh = '1991/11/12' 
  WHERE tensv = 'Nguyen Xuan Dung' AND QUequan = 'Ha Noi' ;
 
--xoá thông tin sinh vien "Nguyen van nam" và que quan 'bac giang'
+--xoá thông tin sinh vien "Nguyen van nam" và que quan 'bac giang'
 delete from Sinhvien where tensv='Nguyen Van Nam' AND QUequan = 'Bac Giang';
 
 --sao lưu và khôi phục
