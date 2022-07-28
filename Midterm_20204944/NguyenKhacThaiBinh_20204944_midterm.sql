@@ -76,6 +76,11 @@ WHERE GV# = 'GV001'
 SELECT COUNT(Theloai)
 FROM detai
 WHERE Theloai = 'ung dung';
+
+SELECT count(*) as SoLuongSV from Sinhvien 
+join HuongDan on Sinhvien.SV# = HuongDan.SV#
+WHERE HuongDan.GV# = 'GV012' AND Sinhvien.QUequan = N'Hải Phòng';
+
 -- cap nhat ngay sinh
  UPDATE Sinhvien SEt Ngaysinh = '1991/11/12' 
  WHERE tensv = 'Nguyen Xuan Dung' AND QUequan = 'Ha Noi' ;
@@ -83,6 +88,9 @@ WHERE Theloai = 'ung dung';
 --xoá thông tin sinh vien "Nguyen van nam" và que quan 'bac giang'
 delete from Sinhvien where tensv='Nguyen Van Nam' AND QUequan = 'Bac Giang';
 
+select DeTaiHuongDan.DeTai from DeTaiHuongDan
+where NamThucHien = 2022
+group by DeTaiHuongDan.DeTai;
 --sao lưu và khôi phục
 
 
