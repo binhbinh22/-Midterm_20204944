@@ -96,12 +96,12 @@ insert into datcho(maKH,maCB,thoigiandat) values
 select chuyen_bay.maCB, chuyen_bay.sb_di, chuyen_bay.gio_di, chuyen_bay.ngay_di,
 chuyen_bay.sb_den, chuyen_bay.gio_den, chuyen_bay.ngay_den, chuyen_bay.so_cho 
 from chuyen_bay join sanbay on chuyen_bay.sb_di = sanbay.maSB
-where sanbay.ten = 'Noi Bai' and chuyen_bay.ngay_di = '06-12-2021';
+where sanbay.ten = 'Noi Bai' and chuyen_bay.ngay_di = '2021-12-06';
 
 --- b ---
 select sanbay.maSB, sanbay.ten, sanbay.thanhpho, sanbay.quocgia 
 from sanbay join chuyen_bay on chuyen_bay.sb_di = sanbay.maSB
-where chuyen_bay.ngay_di != '06-12-2021' and chuyen_bay.ngay_den != '06-12-2021';
+where chuyen_bay.ngay_di != '2021-12-06' and chuyen_bay.ngay_den != '2021-12-06';
 
 --- c ---
 select khachhang.maKH, khachhang.ten, khachhang.diachi, khachhang.sdt, count(datcho.maKH) as so_shuyen_bay
