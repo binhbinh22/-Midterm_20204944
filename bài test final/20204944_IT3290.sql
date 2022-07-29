@@ -28,8 +28,8 @@ CREATE TABLE khachhang (
  
 
  CREATE TABLE datcho (
-   maCB varchar(20) FOREIGN KEY REFERENCES chuyen_bay(maCB),
    maKH varchar(30) FOREIGN KEY REFERENCES khachhang(maKH),
+   maCB varchar(20) FOREIGN KEY REFERENCES chuyen_bay(maCB),
    thoigiandat DATE,
    PRIMARY KEY(maCB,maKH)
  );
@@ -72,7 +72,7 @@ VALUES
  ('KH014','Thuy','Hung Yen','0983098462'),
  ('KH015','Chuc','Bac Ninh','0983167482')
  
-insert into datcho(maCB,maKH,thoigiandat) values
+insert into datcho(maKH,maCB,thoigiandat) values
 ('KH001', 'A1','2022-01-05'),
 ('KH002', 'A2','2021-02-06'),
 ('KH003', 'A3','2021-03-07'),
